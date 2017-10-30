@@ -1,7 +1,7 @@
 drop table effective_care_parquet;
 create table effective_care_parquet as
 select
-cast(provider_id as int) provider_id,
+provider_id,
 condition,
 measure_id,
 cast(score as int) score,
