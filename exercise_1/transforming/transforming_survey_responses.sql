@@ -1,7 +1,7 @@
 drop table survey_responses_parquet;
 create table survey_responses_parquet as
 select
-cast(provider_id as int) provider_id,
+provider_id,
 cast(trim(substring(comm_nurse_score, 0, 2)) as int) comm_nurse_score,
 cast(trim(substring(comm_doctor_score, 0, 2)) as int) comm_doctor_score,
 cast(trim(substring(responsiveness_score, 0, 2)) as int) responsiveness_score,
