@@ -10,7 +10,7 @@ zip_code,
 county_name,
 phone_number,
 hospital_type,
-hospital_owner,
+hospital_ownership,
 emergency_services
 from hospitals
 ;
