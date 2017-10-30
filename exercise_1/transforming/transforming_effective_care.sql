@@ -7,7 +7,7 @@ measure_id,
 cast(score as int) score,
 cast(sample as int) sample
 from effective_care
-where and measure_id <> 'EDV'
+where measure_id <> 'EDV'
 and score <> 'Not Available'
 and footnote <> '11 - There were discrepancies in the data collection process.'
 ;
