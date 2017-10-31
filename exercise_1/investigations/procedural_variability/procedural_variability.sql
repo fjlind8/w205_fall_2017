@@ -1,3 +1,4 @@
+drop table procedural_variability;
 create table procedural_variability as
 select
 measure_id,
@@ -5,7 +6,7 @@ count(a.provider_id) provider_count,
 min(score) min_score,
 max(score) max_score,
 round(cast(sum(score * sample) as float) / sum(sample), 4) weighted_avg_score,
-round(sqrt(variance(score)), 4) standard_deviation_score
+round(variance(score), 4) var_score
 from effective_care_parquet a
 join hospitals_parquet b on a.provider_id = b.provider_id
 where b.hospital_type <> 'Childrens'
@@ -24,6 +25,6 @@ and measure_id <> 'STK_4'
 and measure_id <> 'VTE_6'
 group by measure_id
 having provider_count >= 1000
-order by standard_deviation_score desc
+order by var_score desc
 limit 10
 ;
