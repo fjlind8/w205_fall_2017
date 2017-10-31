@@ -1,0 +1,20 @@
+The states that are the best models of high-quality care are (#1 - #10):
+
+CO
+UT
+SD
+MD
+NH
+NE
+NC
+WI
+DE
+ME
+
+After creating the table using best_states.sql, these results can be found using:
+select
+state
+from best_states
+;
+
+
