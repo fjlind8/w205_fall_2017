@@ -1,0 +1,22 @@
+My answer for which hospitals are the BEST hospitals are:
+
+<
+
+>
+
+(
+found using:
+select
+provider_id,
+hospital_name
+from best_hospitals
+;
+)
+
+My methodology was to look at both the Effective Care and the Readmissions and Deaths data. The Effective Care has scores for dozens of measures, so the hospitals with the highest aggregated / weighted average scores across all procedures indicate the ones that provide the best quality for the customer. However, I had to cleanse some of the measures out to ensure that the ones I aggregated were all on the same scale. So, in the best_hospitals.sql script, you will notice several exclusions on measure_id. Those are measures that are not on the 0 - 100 scale (such as the median time metrics), or where a lower score is better. All the included measures are on a scale of 0 - 100, where the number indicates the percent of applicable customers who received the proper treatment at the right time.
+
+As informative as the Effective Care data is, the Readmissions and Deaths file contains measures that seem qualitatively more severe - mortality and readmissions rates for various procedures for conditions like heart attack or stroke. The Effective Care data contains some measures along the lines of "did the patient receive aspirin within 30 minutes of admittance?" While it is important to track all sorts of metrics, a hospital with great aspirin scores but high mortality scores likely shouldn't be considered "better" than one with poor aspirin scores and low mortality rates, for example. I believe that a patient's life is more important than a patient's pain that requires less attention. That idea led to me including both data sets to determine the best hospitals.
+
+So, you will see in the file best_hospitals.sql that I chose to include both the Effective Care score (higher is better) and Readmissions and Deaths score (lower is better). My final score for determining which hospitals provide the best service is to take the Effective Care aggregate / weighted average score minus the Readmissions and Deaths aggregate / weighted score. I wanted to report a final score on the same scale of 0 - 100 so I did not weight the values in the subtraction to the population of cases from each data set. By not weighting, I am making an assumption that the proportion of severe cases and less-severe cases are equal across all hospitals.
+
+The best hospitals were those with the highest final score values, as it rewards hospitals with consistently high scores across all measures and low mortality and readmission rates.
