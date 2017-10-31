@@ -21,4 +21,4 @@ join measures_parquet b on a.measure_id = b.measure_id
 
 To answer this question I only focused on the Effective Care data set because it has a wider range of procedures than the Readmissions and Deaths data set. The logic for this query was the same as for the best_hospitals and best_states questions in terms of the filtered out measures. I also added some logic to check that the measure had scores for at least 1000 hospitals (roughly 20% of all hospitals). This threshold was chosen rather arbitrarily but I felt 1000 was a good sample size to work with. Some measures were only calculated for less than 100 hospitals and I felt that was too small to compare to other hospitals.
 
-I based my answer to this question on the standard deviation of the score for a particular measure, where the largest standard deviation means the most variability in a measure across hospitals.
+I based my answer to this question on the variance of the score for a particular measure, where the largest variance means the most variability in a measure across hospitals.
