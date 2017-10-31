@@ -4,7 +4,7 @@ select
 provider_id,
 hospital_name,
 address,
-city
+city,
 state,
 hospital_type,
 hospital_ownership,
