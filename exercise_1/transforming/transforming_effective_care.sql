@@ -3,7 +3,7 @@ create table effective_care_parquet as
 select
 provider_id,
 condition,
-measure_id,
+if(measure_id = 'IMM_3_FAC_ADHPCT', 'IMM_3', upper(measure_id)) measure_id,
 cast(score as int) score,
 cast(sample as int) sample
 from effective_care
