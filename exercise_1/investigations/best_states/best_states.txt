@@ -17,4 +17,4 @@ state
 from best_states
 ;
 
-
+The methodology used to calculate the best states was the same as it was for the best hospitals, except aggregated at the state level.
