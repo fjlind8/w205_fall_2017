@@ -1,18 +1,23 @@
-The results are
+The hospitals with the greatest procedural variability are (#1 - #10)
 
-<
+IMM_3	Healthcare Personnel Influenza Vaccination
+VTE_5	Venous Thromboembolism Warfarin Therapy Discharge Instructions
+VTE_1	Venous Thromboembolism Prophylaxis
+STK_8	Stroke Education
+IMM_2	Influenza Immunization
+HF_1	Discharge Instructions
+HF_2	Evaluation of LVS Function
+STK_6	Discharged on Statin Medication
+PN_6	Initial Antibiotic Selection for CAP in Immunocompetent Patient
+STK_1	Venous Thromboembolism (VTE) Prophylaxis
 
->
-
-(
-found using:
+After creating the table using procedural_variability.sql, these results can be found using:
 select
-measure_id,
-measure_name
+a.measure_id,
+b.measure_name
 from procedural_variability a
 join measures_parquet b on a.measure_id = b.measure_id
 ;
-)
 
 To answer this question I only focused on the Effective Care data set because it has a wider range of procedures than the Readmissions and Deaths data set. The logic for this query was the same as for the best_hospitals and best_states questions in terms of the filtered out measures. I also added some logic to check that the measure had scores for at least 1000 hospitals (roughly 20% of all hospitals). This threshold was chosen rather arbitrarily but I felt 1000 was a good sample size to work with. Some measures were only calculated for less than 100 hospitals and I felt that was too small to compare to other hospitals.
 
