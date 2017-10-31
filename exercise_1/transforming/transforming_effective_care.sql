@@ -5,8 +5,7 @@ provider_id,
 condition,
 measure_id,
 cast(score as int) score,
-cast(sample as int) sample,
-sum(cast(score as int)) * sum(cast(sample as int)) weighted_score
+cast(sample as int) sample
 from effective_care
 where measure_id <> 'EDV'
 and score <> 'Not Available'
