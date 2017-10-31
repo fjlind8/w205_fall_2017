@@ -17,4 +17,4 @@ state
 from best_states
 ;
 
-The methodology used to calculate the best states was the same as it was for the best hospitals, except aggregated at the state level.
+The methodology used to calculate the best states was the same as it was for the best hospitals, except aggregated at the state level. I upped the measure count requirements to 30 for the Effective Care data and 10 for the Readmissions and Death data to ensure the highest quality of comparison across states.
