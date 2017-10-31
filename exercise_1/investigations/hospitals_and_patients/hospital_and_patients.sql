@@ -1,8 +1,8 @@
 drop table hospitals_and_patients;
 create table hospitals_and_patients as
 select
-corr(a.weighted_avg_score, b.hcahps_base_score + b.hcahps_base_score) correlation_avg,
-corr(a.var_score, b.hcahps_base_score + b.hcahps_base_score) correlation_var
+round(corr(a.weighted_avg_score, b.hcahps_base_score + b.hcahps_base_score), 4) correlation_avg,
+round(corr(a.var_score, b.hcahps_base_score + b.hcahps_base_score), 4) correlation_var
 from
 (
 select
