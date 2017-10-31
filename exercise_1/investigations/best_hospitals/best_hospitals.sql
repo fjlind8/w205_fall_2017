@@ -3,7 +3,7 @@ create table best_hospitals as
 select
 variety.provider_id,
 variety.hospital_name,
-round(variety.weighted_avg_score - severe.weighted_avg_score, 4) as final_score,
+round(variety.weighted_avg_score - severe.weighted_avg_score, 4) final_score,
 round(variety.weighted_avg_score, 4) variety_weighted_avg_score,
 round(variety.var_score, 4) variety_var_score,
 round(severe.weighted_avg_score, 4) severe_weighted_avg_score,
@@ -13,10 +13,10 @@ from
 select
 a.provider_id,
 b.hospital_name,
-count(measure_id) as measure_count,
-sum(sample) as population_count,
-cast(sum(score * sample) as float) / sum(sample) as weighted_avg_score,
-variance(score) as var_score
+count(measure_id) measure_count,
+sum(sample) population_count,
+cast(sum(score * sample) as float) / sum(sample) weighted_avg_score,
+variance(score) var_score
 from effective_care_parquet a
 join hospitals_parquet b on a.provider_id = b.provider_id
 where b.hospital_type <> 'Childrens'
@@ -42,10 +42,10 @@ join
 select
 a.provider_id,
 b.hospital_name,
-count(measure_id) as measure_count,
-sum(denominator) as population_count,
-cast(sum(denominator * score) as float) / sum(denominator) as weighted_avg_score,
-variance(score) as var_score
+count(measure_id) measure_count,
+sum(denominator) population_count,
+cast(sum(denominator * score) as float) / sum(denominator) weighted_avg_score,
+variance(score) var_score
 from readmissions_parquet a
 join hospitals_parquet b on a.provider_id = b.provider_id
 where b.hospital_type <> 'Childrens'
