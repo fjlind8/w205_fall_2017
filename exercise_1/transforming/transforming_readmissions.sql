@@ -5,7 +5,7 @@ provider_id,
 measure_id,
 compared_to_national,
 cast(denominator as int) denominator,
-cast(score as decimal(1, 0)) score
+cast(score as float) score
 from readmissions
 where score <> 'Not Available'
 ;
