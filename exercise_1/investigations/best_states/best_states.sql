@@ -13,8 +13,8 @@ select
 b.state,
 count(measure_id) as measure_count,
 sum(sample) as population_count,
-cast(sum(score * sample) as float) / sum(sample) as weighted_avg_score,
-variance(score) as var_score
+round(cast(sum(score * sample) as float) / sum(sample), 4) weighted_avg_score,
+round(variance(score), 4) var_score
 from effective_care_parquet a
 join hospitals_parquet b on a.provider_id = b.provider_id
 where b.hospital_type <> 'Childrens'
@@ -41,8 +41,8 @@ select
 b.state,
 count(measure_id) as measure_count,
 sum(denominator) as population_count,
-cast(sum(denominator * score) as float) / sum(denominator) as weighted_avg_score,
-variance(score) as var_score
+round(cast(sum(denominator * score) as float) / sum(denominator), 4) as weighted_avg_score,
+round(variance(score), 4) as var_score
 from readmissions_parquet a
 join hospitals_parquet b on a.provider_id = b.provider_id
 where b.hospital_type <> 'Childrens'
