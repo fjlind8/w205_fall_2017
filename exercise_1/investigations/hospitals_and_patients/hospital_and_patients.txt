@@ -1,0 +1,15 @@
+My analysis concluded that average scores for hospital quality correlate more with patient responses than procedural variability does.
+
+correlation_avg = 0.1974
+correlation_var = -0.1054
+
+After creating the table using hospitals_and_patients.sql, these results can be found using:
+select
+correlation_avg,
+correlation_var
+from hospitals_and_patients
+;
+
+The generation of that table uses the same filters seen in the best_hospitals.sql and best_states.sql query. I also added a condition on measure_count >= 25 to ensure that the hospitals compared had at least two-thirds of the measures reported. This instills some confidence that the hospitals' scores aren't being influenced by a small number of procedures.
+
+Neither measure has a strong relationship with patient responses, but the average scores has a stronger correlation because the absolute value is greater than the procedure variability, or variance, of that hospital. It is interesting that the correlation with average scores is positive and the correlation to variance is negative. As hospitals' scores improve on average, so do patient responses. And as a procedure increases in variance, patient survey responses decrease. This could be a case of survey bias, where customers who had a strong negative experience are more likely to submit a survey than those with an average one.
