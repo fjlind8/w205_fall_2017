@@ -4,10 +4,10 @@ select
 variety.provider_id,
 variety.hospital_name,
 round(variety.weighted_avg_score - severe.weighted_avg_score, 4) as final_score,
-variety.weighted_avg_score variety_weighted_avg_score,
-variety.var_score variety_var_score,
-severe.weighted_avg_score severe_weighted_avg_score,
-severe.var_score severe_var_score
+round(variety.weighted_avg_score, 4) variety_weighted_avg_score,
+round(variety.var_score, 4) variety_var_score,
+round(severe.weighted_avg_score, 4) severe_weighted_avg_score,
+round(severe.var_score, 4) severe_var_score
 from
 (
 select
