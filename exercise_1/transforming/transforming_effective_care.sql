@@ -10,5 +10,4 @@ from effective_care
 where measure_id <> 'EDV'
 and score <> 'Not Available'
 and footnote <> '11 - There were discrepancies in the data collection process.'
-group by provider_id, condition, measure_id, score, sample
 ;
