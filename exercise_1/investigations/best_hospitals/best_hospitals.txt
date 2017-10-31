@@ -1,17 +1,22 @@
-My answer for which hospitals are the BEST hospitals are:
+My answer for which hospitals are the BEST hospitals are (#1 - #10):
 
-<
+460003	SALT LAKE REGIONAL MEDICAL CENTER
+170197	KANSAS MEDICAL CENTER LLC
+420087	ROPER HOSPITAL
+490041	MARY IMMACULATE HOSPITAL
+030023	FLAGSTAFF MEDICAL CENTER
+230259	ST JOSEPH MERCY CHELSEA
+420023	ST FRANCIS-DOWNTOWN
+230072	HOLLAND COMMUNITY HOSPITAL
+150051	INDIANA UNIVERSITY HEALTH BLOOMINGTON HOSPITAL
+390057	GRAND VIEW HOSPITAL
 
->
-
-(
-found using:
+After creating the table using best_hospitals.sql, these results can be found using:
 select
 provider_id,
 hospital_name
 from best_hospitals
 ;
-)
 
 I began my analysis by looking at the different hospital types from hospitals_parquet. I noticed that Children's and VA hospitals occur much less frequently than Acute Care or Critical Care. When asked which hospitals provide the best care for patients, I could have grouped by hospital type, but a majority of citizens in the country are adult, non-Veterans, so my answers are tailored to the majority of the population.
 
