@@ -1,5 +1,7 @@
 Transforming
 
+Note: I tested that all 5 of these queries work when I run the query directly in the CLI. I was not able to figure out how to run a .sql file from spark similar to "hive -f /path/to/file".
+
 I began my analysis by looking at the different hospital types from the table hospitals. I noticed that Children's and VA hospitals occur much less frequently than Acute Care or Critical Care. When asked which hospitals provide the best care for patients, I could have grouped by hospital type, but a majority of citizens in the country are adult, non-Veterans, so my answers are tailored to the majority of the population.
 
 I also noticed lots of records in the Effective Care, Admissions and Deaths, and Survey Reponses data sets where the score value was 'Not Available'. I decided to remove these records from my transformed tables rather than change the nulls to the mean, or some other transformation. I did not find it logical to change these nulls to the mean value because I was lacking both the score and sample metrics. I did consider partitioning the data by state and updating the nulls to the average value by hospitals in that state, but ultimately decided against it. I envision there are many factors that could support my decision to not treat nulls like averages. Some examples include which state the hospital resides in, urban vs rural geographic location (or population), socio-economic status, health and education status of citizens, etc.
