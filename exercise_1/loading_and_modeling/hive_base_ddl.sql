@@ -18,7 +18,7 @@ with serdeproperties
 (
 "separatorChar" = ",",
 "quoteChar"     = "\"",
-"escapeChar" = '\\'
+"escapeChar"    = '\\'
 )
 location '/user/w205/hospital_compare/hospitals'
 ;
@@ -48,7 +48,7 @@ with serdeproperties
 (
 "separatorChar" = ",",
 "quoteChar"     = "\"",
-"escapeChar" = '\\'
+"escapeChar"    = '\\'
 )
 location '/user/w205/hospital_compare/effective_care'
 ;
@@ -80,7 +80,7 @@ with serdeproperties
 (
 "separatorChar" = ",",
 "quoteChar"     = "\"",
-"escapeChar" = '\\'
+"escapeChar"    = '\\'
 )
 location '/user/w205/hospital_compare/readmissions'
 ;
@@ -99,7 +99,7 @@ with serdeproperties
 (
 "separatorChar" = ",",
 "quoteChar"     = "\"",
-"escapeChar" = '\\'
+"escapeChar"    = '\\'
 )
 location '/user/w205/hospital_compare/measures'
 ;
@@ -146,7 +146,7 @@ with serdeproperties
 (
 "separatorChar" = ",",
 "quoteChar"     = "\"",
-"escapeChar" = '\\'
+"escapeChar"    = '\\'
 )
 location '/user/w205/hospital_compare/survey_responses'
 ;
