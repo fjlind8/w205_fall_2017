@@ -105,7 +105,7 @@ location '/user/w205/hospital_compare/measures'
 ;
 
 drop table survey_responses;
-create table survey_responses
+create external table survey_responses
 (
 provider_id string,
 hospital_name string,
