@@ -11,6 +11,6 @@ This exercise demonstrates how to perform data extraction, transformation, and a
 
 The loading_and_modeling folder contains a shell script and sql file. The shell script will download the files from data.medicare.gov to the local AWS directory, edit the files, and upload to the HDFS. The sql file will create hive tables from the raw .csv files. There are only 5 raw files that we are interested in
 
-The transforming folder contains several files that will transform the base hive tables into more easy-to-use files for future analysis.
+The transforming folder contains several files that will transform the base hive tables into more easy-to-use tables for future analysis. The README.txt file in this folder is of particular importance as I cover null exception handling and row and column selection.
 
 The investigations folder contains a subfolder for each of the questions. There is a .sql file to provide the results of my analysis and a .txt file to explain my methodology.
