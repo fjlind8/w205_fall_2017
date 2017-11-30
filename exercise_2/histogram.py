@@ -17,6 +17,9 @@ else:
     # Look for the words that fall between the integers k1 and k2
     words          = cur.fetchall()
     words_in_range = [i for i in words if int(i[1]) >= k1 and int(i[1]) <= k2]
+    
+    # Close the connection
+    conn.close()
 
     # If there are words with counts between the integers, print them in descending count order
     if len(words_in_range) > 0:
@@ -30,5 +33,3 @@ else:
         print
     else:
         print '\nThere are no words with counts between {} and {}\n'.format(k1, k2)
-
-
