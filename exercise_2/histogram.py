@@ -1,6 +1,7 @@
 import sys
 import psycopg2
 
+# If there's an incorrect number of arguments entered, or improperly formatted, ask the user to resubmit
 if (len(sys.argv) != 3) or (sys.argv[1] > sys.argv[2]):
     print '\nPlease enter two integers with no comma separator, the first being less than or equal to the second\n'
     exit(1)
