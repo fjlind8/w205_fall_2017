@@ -14,6 +14,7 @@ df_counts = pd.DataFrame(counts, columns = ['word', 'count'])
 
 df_counts.sort_values(['count'], ascending = False, inplace = True)
 
+plt.clf()
 plt.bar(df_counts['word'], df_counts['count'], align = 'center')
 plt.xticks(rotation = 'vertical')
 plt.ylabel('Word Count')
