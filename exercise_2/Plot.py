@@ -12,7 +12,7 @@ cur.execute('select * from tweetwordcount order by count desc limit 20')
 counts    = cur.fetchall()
 df_counts = pd.DataFrame(counts, columns = ['word', 'count'])
 
-df_counts.sort_values(['count'], ascending = False, inplace = True)
+# df_counts.sort_values(['count'], ascending = False, inplace = True)
 
 plt.clf()
 plt.bar(df_counts['word'], df_counts['count'], align = 'center')
