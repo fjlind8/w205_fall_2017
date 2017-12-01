@@ -14,10 +14,9 @@ df_counts = pd.DataFrame(counts, columns = ['word', 'count'])
 df_counts.set_index(['word'], inplace = True)
 
 plt.clf()
-plt.figure(figsize = (15, 15))
+plt.figure(figsize = (20, 20))
 df_counts.plot(kind = 'bar', title = 'The Top 20 Words in My Twitter Stream', legend = False)
 plt.xticks(rotation = 90)
-plt.xlabel('')
-plt.ylabel('Word Count')
+plt.ylabel('Count')
 plt.savefig('Plot.png')
 
