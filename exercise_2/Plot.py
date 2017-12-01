@@ -12,7 +12,8 @@ cur.execute('select * from tweetwordcount order by count desc limit 20')
 counts    = cur.fetchall()
 df_counts = pd.DataFrame(counts, columns = ['word', 'count'])
 
-plt.figure(figsize = (20, 20))
+df_counts.sort_values(['count'], ascending = False, inplace = True)
+
 plt.bar(df_counts['word'], df_counts['count'], align = 'center')
 plt.xticks(rotation = 'vertical')
 plt.ylabel('Word Count')
