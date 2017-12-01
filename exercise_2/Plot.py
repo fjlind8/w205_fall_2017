@@ -15,7 +15,7 @@ df_counts.set_index(['word'], inplace = True)
 
 plt.clf()
 plt.figure(figsize = (15, 15))
-df_counts.plot(kind = 'bar', title = 'The Top 20 Words in My Twitter Stream', colormap = 'jet_r', rot = 0)
+df_counts.plot(kind = 'bar', title = 'The Top 20 Words in My Twitter Stream', colormap = 'jet_r', rot = 90)
 plt.ylabel('Word Count')
 plt.savefig('Plot.png')
 
