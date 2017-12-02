@@ -12,7 +12,7 @@ This project is designed to work from the UCB AMI. Hadoop and postgres have alre
 >>> import matplotlib.pyplot as plt
 )
 
-The scripts Plot.py, finalresults.py, histogram.py, and the stream parse (located in extweetwordcount) all require a postgres database tcount to be created with the table tweetwordcount. The syntax to create them is in exercise_2/psycopg-sample.py, or you can just run that file as is. Once tcount and tweetwordcount are created, you should be able to execute the python scripts listed above, as well as "sparse run" from the /extweetwordcount directory to load new data into the tcount database.
+The scripts Plot.py, finalresults.py, histogram.py, and the stream parse (located in extweetwordcount) all require a postgres database tcount to be created with the table tweetwordcount. The syntax to create them is in exercise_2/psycopg-sample.py, or you can just run that file as is. Once tcount and tweetwordcount are created and you have specified your Twitter API credentials in /extweetwordcount/src/spouts/tweets.py, you should be able to execute the python scripts listed above, as well as "sparse run" from the /extweetwordcount directory to load new data into the tcount database.
 
 The files of production relevance in the current exercise_2 directory are:
 - Architecture.pdf - visual representation of the architecture of this application
